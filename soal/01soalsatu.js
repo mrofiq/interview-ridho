@@ -6,3 +6,10 @@ arr = [
 ];
 
 // // buat fungsi untuk menampilkan group siswa
+var soal01 = module.exports = {
+  grouping: function (group) {
+    return arr.filter(obj => obj.group === group)
+  },
+};
+
+console.log(soal01.grouping('siswa'))

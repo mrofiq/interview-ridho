@@ -1,5 +1,5 @@
 // Initial data
-var data = {
+var initData = {
   "first_name": "Jhon",
   "last_name": "Doe",
   "address": "JL. Raya Merdeka Raya 01 02",
@@ -71,3 +71,27 @@ var data = {
   "total_quantity": 382,
   "total": 76777500
 }
+
+var soal06 = module.exports = {
+  summaryData: function () {
+    let total_items = initData.items.length
+    let total_quantity = 0
+    let total = 0
+
+    for (var i = 0; i < total_items; i++) {
+      const sub_total =  initData.items[i].price *  initData.items[i].quantity
+      total_quantity +=  initData.items[i].quantity
+      total += sub_total
+      initData.items[i].sub_total = sub_total
+    }
+
+    return {
+      ...initData,
+      total_items,
+      total_quantity,
+      total: total
+    }
+  },
+};
+
+console.log(soal06.summaryData())
